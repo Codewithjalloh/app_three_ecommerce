@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:app_three_ecommerce/models/shop.dart';
 
+import '../components/my_product_tile.dart';
+
 class ShopPage extends StatelessWidget {
   const ShopPage({super.key});
 
@@ -49,7 +51,7 @@ class ShopPage extends StatelessWidget {
                   // return as a product tile UI
                   return MyProductTile(product: product);
                 }),
-          )
+          ),
         ],
       ),
     );
