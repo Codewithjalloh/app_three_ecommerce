@@ -54,7 +54,25 @@ class MyProductTile extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [],
+        children: [
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              // product image
+              AspectRatio(
+                aspectRatio: 1,
+                child: Container(
+                  decoration: BoxDecoration(
+                      color: Theme.of(context).colorScheme.secondary,
+                      borderRadius: BorderRadius.circular(12)),
+                  width: double.infinity,
+                  padding: EdgeInsets.all(25),
+                  child: Image.asset(product.imagePath),
+                ),
+              )
+            ],
+          )
+        ],
       ),
     );
   }
