@@ -1,3 +1,4 @@
+import 'package:app_three_ecommerce/components/my_drawer.dart';
 import 'package:app_three_ecommerce/models/shop.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -26,6 +27,7 @@ class ShopPage extends StatelessWidget {
           ),
         ],
       ),
+      drawer: MyDrawer(),
       body: ListView(
         children: [
           SizedBox(
