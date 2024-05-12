@@ -69,7 +69,43 @@ class MyProductTile extends StatelessWidget {
                   padding: EdgeInsets.all(25),
                   child: Image.asset(product.imagePath),
                 ),
-              )
+              ),
+
+              SizedBox(
+                height: 25,
+              ),
+
+              // product name
+              Text(
+                product.name,
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0),
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              // product description
+              Text(product.description),
+              SizedBox(
+                height: 25,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    "\$" + product.price.toStringAsFixed(2),
+                  ),
+                  Container(
+                    decoration: BoxDecoration(
+                      color: Theme.of(context).colorScheme.secondary,
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    child: IconButton(
+                      onPressed: () => addToCart(context),
+                      icon: Icon(Icons.add),
+                    ),
+                  )
+                ],
+              ),
             ],
           )
         ],
