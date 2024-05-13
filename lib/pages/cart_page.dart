@@ -13,24 +13,25 @@ class CartPage extends StatelessWidget {
     showDialog(
         context: context,
         builder: (context) => AlertDialog(
-              content: Text("Remove this time from your cart"),
+              content: const Text(
+                "Remove this time from your cart",
+              ),
               actions: [
-                // cancel
+                // CANCEL BUTTON
                 MaterialButton(
                   onPressed: () => Navigator.pop(context),
-                  child: Text("Cancel"),
+                  child: const Text("Cancel"),
                 ),
 
-                // yes button
+                // YES BUTTON
                 MaterialButton(
                   onPressed: () {
                     // pop dialog
                     Navigator.pop(context);
-
                     // add to cart
                     context.read<Shop>().removeFromCart(product);
                   },
-                  child: Text("Yes"),
+                  child: const Text("Yes"),
                 )
               ],
             ));
@@ -40,8 +41,10 @@ class CartPage extends StatelessWidget {
   void payButtonPressed(BuildContext context) {
     showDialog(
       context: context,
-      builder: (context) => AlertDialog(
-        content: Text("User wants to pay! connect this app to your payment"),
+      builder: (context) => const AlertDialog(
+        content: Text(
+          "User wants to pay! connect this app to your payment",
+        ),
       ),
     );
   }
@@ -63,7 +66,7 @@ class CartPage extends StatelessWidget {
           // cart list
           Expanded(
             child: cart.isEmpty
-                ? Center(
+                ? const Center(
                     child: Text("Your cart is empty"),
                   )
                 : ListView.builder(
@@ -77,7 +80,7 @@ class CartPage extends StatelessWidget {
                         title: Text(item.name),
                         subtitle: Text(item.price.toStringAsFixed(2)),
                         trailing: IconButton(
-                          icon: Icon(Icons.remove),
+                          icon: const Icon(Icons.remove),
                           onPressed: () => removeItemFromCart(conext, item),
                         ),
                       );
@@ -86,10 +89,10 @@ class CartPage extends StatelessWidget {
           ),
           // pay button
           Padding(
-            padding: EdgeInsets.all(50),
+            padding: const EdgeInsets.all(50),
             child: MyButton(
               onTap: () => payButtonPressed(context),
-              child: Text("PAY NOW"),
+              child: const Text("PAY NOW"),
             ),
           )
         ],
