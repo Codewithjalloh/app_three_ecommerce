@@ -18,12 +18,12 @@ class MyProductTile extends StatelessWidget {
     showDialog(
         context: context,
         builder: (context) => AlertDialog(
-              content: Text("Add this time to your cart"),
+              content: const Text("Add this time to your cart"),
               actions: [
-                // cancel buttton
+                // cancel button
                 MaterialButton(
                   onPressed: () => Navigator.pop(context),
-                  child: Text("Cancel"),
+                  child: const Text("Cancel"),
                 ),
 
                 // yes button
@@ -31,11 +31,10 @@ class MyProductTile extends StatelessWidget {
                   onPressed: () {
                     // pop dialog
                     Navigator.pop(context);
-
                     // add to cart
                     context.read<Shop>().addToCart(product);
                   },
-                  child: Text("Yes"),
+                  child: const Text("Yes"),
                 )
               ],
             ));
@@ -49,8 +48,8 @@ class MyProductTile extends StatelessWidget {
         borderRadius: BorderRadius.circular(12),
       ),
       width: 300,
-      margin: EdgeInsets.all(10),
-      padding: EdgeInsets.all(25),
+      margin: const EdgeInsets.all(10),
+      padding: const EdgeInsets.all(25),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -66,33 +65,37 @@ class MyProductTile extends StatelessWidget {
                       color: Theme.of(context).colorScheme.secondary,
                       borderRadius: BorderRadius.circular(12)),
                   width: double.infinity,
-                  padding: EdgeInsets.all(25),
+                  padding: const EdgeInsets.all(25),
                   child: Image.asset(product.imagePath),
                 ),
               ),
 
-              SizedBox(
+              const SizedBox(
                 height: 25,
               ),
 
               // product name
               Text(
                 product.name,
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0),
+                style: const TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 20.0,
+                ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               // product description
               Text(product.description),
-              SizedBox(
+              const SizedBox(
                 height: 25,
               ),
+
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    "\$" + product.price.toStringAsFixed(2),
+                    "\$${product.price.toStringAsFixed(2)}",
                   ),
                   Container(
                     decoration: BoxDecoration(
@@ -101,7 +104,7 @@ class MyProductTile extends StatelessWidget {
                     ),
                     child: IconButton(
                       onPressed: () => addToCart(context),
-                      icon: Icon(Icons.add),
+                      icon: const Icon(Icons.add),
                     ),
                   )
                 ],

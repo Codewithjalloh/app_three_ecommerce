@@ -19,24 +19,25 @@ class ShopPage extends StatelessWidget {
         backgroundColor: Colors.transparent,
         elevation: 0,
         foregroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text("Shop Page"),
+        title: const Text("Shop Page"),
         actions: [
           IconButton(
             onPressed: () => Navigator.pushNamed(context, "/cart_page"),
-            icon: Icon(Icons.shopping_cart),
+            icon: const Icon(Icons.shopping_cart),
           ),
         ],
       ),
-      drawer: MyDrawer(),
+      drawer: const MyDrawer(),
+      backgroundColor: Theme.of(context).colorScheme.surface,
       body: ListView(
         children: [
-          SizedBox(
+          const SizedBox(
             height: 25,
           ),
           // SHOP TITLE
           Center(
             child: Text(
-              "Pick from a selected lisr of premium products",
+              "Pick from a selected list of premium products",
               style: TextStyle(
                   color: Theme.of(context).colorScheme.inversePrimary),
             ),
@@ -46,10 +47,10 @@ class ShopPage extends StatelessWidget {
             child: ListView.builder(
                 scrollDirection: Axis.horizontal,
                 itemCount: products.length,
+                padding: const EdgeInsets.all(15),
                 itemBuilder: (context, index) {
                   // get each individual product from shop
                   final product = products[index];
-
                   // return as a product tile UI
                   return MyProductTile(product: product);
                 }),

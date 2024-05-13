@@ -6,24 +6,28 @@ class Shop extends ChangeNotifier {
   // Product for sales
   final List<Product> _shop = [
     Product(
-        name: "Bag 1",
+        name: "Stylish Duffel.",
         price: 129.99,
-        description: "Bag made in Italy",
+        description:
+            "A bag is a kind of soft container. It can hold or carry things.",
         imagePath: "assets/bag1.png"),
     Product(
-        name: "Bag 2",
+        name: "Functional Sling",
         price: 189.99,
-        description: "Bag made in UK",
+        description:
+            "A bag is a kind of soft container. It can hold or carry things.",
         imagePath: "assets/bag2.png"),
     Product(
-        name: "Bag 3",
+        name: "Luxury Purse",
         price: 130.99,
-        description: "Bag made in Ghana",
+        description:
+            "A bag is a kind of soft container. It can hold or carry things.",
         imagePath: "assets/bag3.png"),
     Product(
-        name: "Bag41",
+        name: "Modern Messenger",
         price: 699.99,
-        description: "Bag made in France",
+        description:
+            "A bag is a kind of soft container. It can hold or carry things.",
         imagePath: "assets/bag4.png"),
   ];
 
