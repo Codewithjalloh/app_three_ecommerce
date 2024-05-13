@@ -21,16 +21,16 @@ class IntroPage extends StatelessWidget {
               color: Theme.of(context).colorScheme.inversePrimary,
             ),
 
-            SizedBox(
+            const SizedBox(
               height: 0,
             ),
 
             // TITLE HERE
-            Text(
+            const Text(
               "Shopfy",
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
 
@@ -40,14 +40,14 @@ class IntroPage extends StatelessWidget {
               style: TextStyle(
                   color: Theme.of(context).colorScheme.inversePrimary),
             ),
-            SizedBox(
+            const SizedBox(
               height: 300,
             ),
 
             // BUTTON
             MyButton(
               onTap: () => Navigator.pushNamed(context, "/shop_page"),
-              child: Icon(
+              child: const Icon(
                 Icons.arrow_forward,
               ),
             ),
